@@ -18,6 +18,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
+        <!--servlet版本号-->
+        <servlet.version>3.1.0</servlet.version>
+        <!--servlet jsp版本号-->
+        <jsp.version>2.3.1</jsp.version>
+        <!--servlet jstl版本号-->
+        <jstl.version>1.2</jstl.version>
         <!-- spring的版本号，已经包含springmvc -->
         <spring.version>4.2.4.RELEASE</spring.version>
         <!-- mybatis的版本号 -->
@@ -39,6 +45,30 @@
 
     <!-- 版本锁定，声明依赖 dependencyManagement 加入依赖 dependency-->
     <dependencies>
+        <!-- servlet依赖的jar包start -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+        </dependency>
+        <!-- servlet依赖的jar包start -->
+
+        <!-- jsp依赖jar包start -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>${jsp.version}</version>
+        </dependency>
+        <!-- jsp依赖jar包end -->
+
+        <!--jstl标签依赖的jar包start -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+        <!--jstl标签依赖的jar包end -->
+
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
