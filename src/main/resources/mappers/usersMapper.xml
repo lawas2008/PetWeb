@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lawans.pet.dao.UserMapper">
+    <select id="allUsers" resultType="com.lawans.pet.entity.UserEntity">
+        select * from users
+    </select>
+    <insert id="register" parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="uid">
+        insert into users(phone,password) values (#{phone},#{password})
+    </insert>
+    <select id="login" resultType="com.lawans.pet.entity.UserLoginResult" parameterType="java.util.Map">
+        select * from users,usersdata where users.phone=#{phone} and users.password=#{password} and users.uid=usersdata.uid;
+    </select>
+</mapper>
